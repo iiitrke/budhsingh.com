@@ -32,6 +32,7 @@ services:
         LETSENCRYPT_HOST: filemanager.ps10.in
         LETSENCRYPT_EMAIL: info@yourdomain.com
       networks:
+        - external_network_nginx
         - internal_network
 
 volumes:
