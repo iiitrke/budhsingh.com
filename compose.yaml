@@ -23,12 +23,14 @@ services:
       image: filebrowser/filebrowser
       container_name: filemanager
       volumes:
-        - ./src/config.json:/config/filebrowser.json
+        - ./config.json:/config/filebrowser.json
         - ps10_volume:/srv
-
+        - ./filebrowser.db:/database/filebrowser.db
       expose:
         - 80
       environment:
+        PUID: $(id -u)
+        PGID: $(id -g)
         VIRTUAL_HOST: filemanager.ps10.in
         VIRTUAL_PORT: 80
         LETSENCRYPT_HOST: filemanager.ps10.in
@@ -39,6 +41,8 @@ services:
 
 volumes:
   ps10_volume:
+    driver: local
+  data_volume:
     driver: local
 
 networks:
