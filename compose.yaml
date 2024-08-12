@@ -7,7 +7,7 @@ services:
       container_name: ps10
       environment:
         VIRTUAL_HOST: ps10.in
-        VIRTUAL_PORT: 8090
+        VIRTUAL_PORT: 80
         LETSENCRYPT_HOST: ps10.in
         LETSENCRYPT_EMAIL: info@itasca.co.in
       networks:
