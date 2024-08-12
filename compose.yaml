@@ -23,7 +23,7 @@ services:
       image: filebrowser/filebrowser
       container_name: filemanager
       volumes:
-        - ./src/filebrowser.json:/srv/filebrowser.json
+        - ./src/config.json:/config/filebrowser.json
         - ps10_volume:/srv
 
       expose:
