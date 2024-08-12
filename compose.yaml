@@ -24,6 +24,7 @@ services:
       container_name: filemanager
       volumes:
         - ps10_volume:/srv
+        - ./src/config.json:/srv
       expose:
         - 80
       environment:
