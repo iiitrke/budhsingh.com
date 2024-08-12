@@ -12,6 +12,8 @@ services:
         LETSENCRYPT_EMAIL: info@itasca.co.in
       networks:
         - external_network_nginx
+      expose:
+        - 80
 
 
 networks:
