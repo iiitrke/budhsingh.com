@@ -12,29 +12,31 @@ services:
         LETSENCRYPT_EMAIL: info@itasca.co.in
       volumes:
         - ps10_volume:/var/www/html/
+      depends_on:
+        - filemanager
+      expose:
+        - 80
       networks:
         - external_network_nginx
         - internal_network
-      depends_on:
-        - filemanager
-
-      expose:
-        - 80
     filemanager:
-      image: tinyfilemanager/tinyfilemanager
+      image: filebrowser/filebrowser
       container_name: filemanager
       volumes:
-        - ps10_volume:/var/www/html/data
+        - ps10_volume:/srv
       expose:
         - 80
+      environment:
+        VIRTUAL_HOST: filemanager.ps10.in
+        VIRTUAL_PORT: 80
+        LETSENCRYPT_HOST: filemanager.ps10.in
+        LETSENCRYPT_EMAIL: info@yourdomain.com
       networks:
         - internal_network
 
 volumes:
   ps10_volume:
     driver: local
-
-
 
 networks:
   external_network_nginx:
