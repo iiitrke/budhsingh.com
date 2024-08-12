@@ -15,7 +15,9 @@ services:
       networks:
         - external_network_nginx
         - internal_network
-      depends_on: filemanager
+      depends_on:
+        - filemanager
+
       expose:
         - 80
     filemanager:
