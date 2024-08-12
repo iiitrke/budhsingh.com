@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+    http:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: ps10
+      environment:
+        VIRTUAL_HOST: ps10.in
+        VIRTUAL_PORT: 8090
+        LETSENCRYPT_HOST: ps10.in
+        LETSENCRYPT_EMAIL: info@itasca.co.in
+      networks:
+        - external_network_nginx
+
+
+networks:
+  external_network_nginx:
+    external: true
