@@ -7,7 +7,7 @@
   "auth": {
     "default": {
       "username": "admin",
-      "password": "securepassword"
+      "password": "$2a$10$KtcF1CDRnzDh5rzGtr2ErO/osu0Y9ovdNL/C.V02twur0xeedDuq."
     }
   }
 }
