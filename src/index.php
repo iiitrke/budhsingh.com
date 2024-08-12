@@ -5,7 +5,7 @@
 <body>
 <h1>
 <?php
-echo "Coming Soon";
+echo "Coming Soon from php";
 ?>
 </h1>
 
