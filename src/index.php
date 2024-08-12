@@ -4,8 +4,7 @@
 </head>
 <body>
 <h1>
-<?
-
+<?php
 echo "Coming Soon";
 ?>
 </h1>
