@@ -23,8 +23,9 @@ services:
       image: filebrowser/filebrowser
       container_name: filemanager
       volumes:
+        - ./src/config.json:/srv/config.json
         - ps10_volume:/srv
-        - ./src/config.json:/srv
+
       expose:
         - 80
       environment:
