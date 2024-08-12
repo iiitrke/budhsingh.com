@@ -1,0 +1,13 @@
+{
+  "port": 80,
+  "baseURL": "",
+  "log": "stdout",
+  "database": "filebrowser.db",
+  "root": "/srv",
+  "auth": {
+    "default": {
+      "username": "admin",
+      "password": "securepassword"
+    }
+  }
+}
