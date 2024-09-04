@@ -21,7 +21,7 @@ services:
         - internal_network
     filemanager:
       image: filebrowser/filebrowser
-      container_name: filemanager
+      container_name: filemanager_cloudymedia
       volumes:
         - ./config.json:/config/filebrowser.json
         - cloudywingmedia_volume:/srv
