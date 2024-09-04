@@ -4,14 +4,14 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-      container_name: ps10
+      container_name: cloudywingmedia
       environment:
-        VIRTUAL_HOST: ps10.in
+        VIRTUAL_HOST: cloudywingmedia.com
         VIRTUAL_PORT: 80
-        LETSENCRYPT_HOST: ps10.in
-        LETSENCRYPT_EMAIL: info@itasca.co.in
+        LETSENCRYPT_HOST: cloudywingmedia.com
+        LETSENCRYPT_EMAIL: info@cloudywingmedia.com
       volumes:
-        - ps10_volume:/var/www/html/
+        -  cloudywingmedia_volume:/var/www/html/
       depends_on:
         - filemanager
       expose:
@@ -24,23 +24,23 @@ services:
       container_name: filemanager
       volumes:
         - ./config.json:/config/filebrowser.json
-        - ps10_volume:/srv
+        - cloudywingmedia_volume:/srv
         - ./filebrowser.db:/database/filebrowser.db
       expose:
         - 80
       environment:
         PUID: $(id -u)
         PGID: $(id -g)
-        VIRTUAL_HOST: filemanager.ps10.in
+        VIRTUAL_HOST: filemanager.cloudywingmedia.com
         VIRTUAL_PORT: 80
-        LETSENCRYPT_HOST: filemanager.ps10.in
-        LETSENCRYPT_EMAIL: info@yourdomain.com
+        LETSENCRYPT_HOST: filemanager.cloudywingmedia.com
+        LETSENCRYPT_EMAIL: info@cloudywingmedia.com
       networks:
         - external_network_nginx
         - internal_network
 
 volumes:
-  ps10_volume:
+  cloudywingmedia_volume:
     driver: local
   data_volume:
     driver: local
