@@ -11,7 +11,7 @@ services:
         LETSENCRYPT_HOST: budhsingh.com
         LETSENCRYPT_EMAIL: info@budhsingh.com
       volumes:
-        -  budhsingh.com_volume:/var/www/html/
+        -  budhsingh_volume:/var/www/html/
       depends_on:
         - filemanager
       expose:
@@ -40,7 +40,7 @@ services:
         - internal_network
 
 volumes:
-  budhsinghcom_volume:
+  budhsingh_volume:
     driver: local
   data_volume:
     driver: local
