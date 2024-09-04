@@ -24,7 +24,7 @@ services:
       container_name: filemanager_budhsingh.com
       volumes:
         - ./config.json:/config/filebrowser.json
-        - budhsinghcom_volume:/srv
+        - budhsingh_volume:/srv
         - ./filebrowser.db:/database/filebrowser.db
       expose:
         - 80
